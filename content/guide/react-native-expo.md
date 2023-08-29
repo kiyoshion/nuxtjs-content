@@ -1,6 +1,6 @@
 ---
-title: 'React Native0.72 + Expoではじめるネイティブアプリ開発。'
-tags: ['React Native0.72', 'Expo']
+title: 'React Native + Expoではじめるネイティブアプリ開発。'
+tags: ['React Native', 'Expo']
 type: 'ブログ'
 icon: 'Nuxt.js'
 category: 'nuxt-content'

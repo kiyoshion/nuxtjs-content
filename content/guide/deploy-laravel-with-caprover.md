@@ -1,6 +1,6 @@
 ---
-title: 'OSS PaaSのCapRoverにLaravelをデプロイする'
-tags: ['Laravel', 'PaaS', 'CapRover']
+title: 'CapRoverにLaravelをデプロイする'
+tags: ['Laravel', 'CapRover']
 type: 'PaaS'
 icon: 'Laravel'
 ---

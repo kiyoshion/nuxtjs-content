@@ -3,7 +3,7 @@ title: 'Laravel + React + InertiaではじめるSPA開発 〜VPSにSSRでデプ�
 description: 'これはLaravel + React + InertiaではじめるSPA開発のチュートリアルです。'
 createdAt: '2022-12-05'
 img: 'memos/laravel-react-inertia.jpg'
-tags: ['Laravel 9', 'React 18', 'Inertia']
+tags: ['Laravel', 'React', 'Inertia']
 type: 'SPA'
 icon: 'Laravel'
 snippets: [
@@ -37,7 +37,6 @@ React（SPA）でさくっとSSRできる時代がやってきました！それ
 :: -->
 
 ## Laravelのインストール
-<div>
 ::tab{name1="composer" name2="Laravel sail" slug="laravelsail"}
 
 composerを使ってLaravelをインストールします。
@@ -80,13 +79,13 @@ Laravelの開発サーバーを起動します。
 php artisan serve
 ```
 
-http://localhost:8000にアクセスし、Welcomeページが表示されることを確認してください。
+[http://localhost:8000](http://localhost:8000){:target="_blank"}にアクセスし、Welcomeページが表示されることを確認してください。
 
 #laravelsail
 Laravel SailでLaravelをインストールする。
 
 ::
-</div>
+
 ## laravel/breezeのインストール
 laravel/breezeをインストールするときに、–ssrオプションを付けるのを忘れないでください。
 

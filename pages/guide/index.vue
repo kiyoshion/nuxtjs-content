@@ -1,12 +1,13 @@
 <template>
   <div class=" bg-white min-h-screen">
-    <div class="hero flex flex-col justify-end bg-slate-200 delay-100 relative">
+    <SubNav v-if="store.subNav" lists="lists" />
+    <!-- <div class="hero flex flex-col justify-end bg-slate-200 delay-100 relative">
       <img src="/img/bg/nohaco-top.jpg" class="w-1/2" />
       <h1 className="text-xl p-4 absolute bottom-4 left-4">はじめかた大全</h1>
-    </div>
+    </div> -->
     <div class="flex flex-row flex-wrap bg-slate-200 delay-200 p-1">
-      <div v-for="guide in guides" :key="guide.id" class="w-1/4 p-2 hover:bg-gray-300 duration-75 bg-white">
-        <NuxtLink :to="guide._path" class="w-full h-full block">
+      <div v-for="guide in fillterGuides" :key="guide.id" class="w-1/2 sm:w-1/3 md:w-1/4 p-2 hover:bg-gray-300 duration-75 bg-white">
+        <NuxtLink :to="guide._path" :tag="guide.tags" class="w-full h-full block">
           <div class="flex items-start justify-between p-4 py-8 ">
             <div class="w-1/4">
               <img :src="`/img/svg/${guide.icon}.svg`" class="w-8 h-8" />
@@ -28,12 +29,31 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+import { useMainStore } from '@/store'
+
 definePageMeta({
   documentDriven: false
 })
+const lists = ref([])
+const store = useMainStore()
+const fillterGuides = computed(() => store.currentGuideTag !== 'All' ?
+    guides.map((guide) => guide.tags.indexOf(store.currentGuideTag) !== -1 && guide
+    ).filter(Boolean)
+  :
+    guides
+)
 const guides = await queryContent('/guide')
   .only(['title', '_path', 'type', 'tags', 'icon'])
   .find()
+onMounted(() => {
+  guides.map((guide) => {
+    guide.tags.map((tag) => {
+      lists.value += tag
+    })
+  })
+  store.$patch({ subNav: true })
+})
 </script>
 
 <style scoped>

@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@vueuse/nuxt',
     '@vueuse/motion/nuxt',
+    '@pinia/nuxt',
   ],
   content: {
     documentDriven: true,

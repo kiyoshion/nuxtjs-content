@@ -3,7 +3,7 @@
     <div>
       <div v-for="tag in tags" :key="tag">
         <NuxtLink
-          :href="`/error/${(tag.replaceAll(' ', '-')).toLowerCase()}`"
+          :href="`/solved/${(tag.replaceAll(' ', '-')).toLowerCase()}`"
           class="py-1 px-2"
         >{{ tag }}</NuxtLink>
       </div>

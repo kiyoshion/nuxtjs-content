@@ -70,11 +70,13 @@ pre {
 }
 
 ._main-content blockquote {
-  border-radius: .5rem;
+  border-radius: .25rem;
   padding: 2rem;
-  background-color: rgba(205, 248, 238, 0.2);
+  border-left: .5rem solid rgba(205, 248, 238, 0.8);
+  /* background-color: rgba(205, 248, 238, 0.2); */
 }
 ._main-content blockquote p {
+  font-size: .9rem;
   margin: 0;
 }
 
